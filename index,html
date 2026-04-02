@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YT Content OS Lite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title" id="topbarTitle">🚀 YT CONTENT OS LITE</div>
+        <div class="topbar-sub" id="topbarSub">Sistema ligero de creación de contenido con IA</div>
+      </div>
+
+      <div class="topbar-actions">
+        <button class="btn btn-ghost" id="saveBtn">Guardar</button>
+        <button class="btn btn-primary" id="exportBtn">Exportar</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand-card">
+          <div class="brand-logo">⚡</div>
+          <div>
+            <div class="brand-name">Content Machine</div>
+            <div class="brand-sub">ERB · ISM · Gemini</div>
+          </div>
+        </div>
+
+        <nav class="side-nav" id="sideNav"></nav>
+
+        <div class="side-box">
+          <div class="side-box-title">🤖 IA</div>
+
+          <label class="label">Modo</label>
+          <select class="input" id="aiMode">
+            <option value="manual">Manual</option>
+            <option value="api">API / Proxy</option>
+          </select>
+
+          <label class="label">Proxy URL</label>
+          <input class="input" id="aiProxyUrl" placeholder="https://script.google.com/macros/s/.../exec" />
+
+          <label class="label">Modelo</label>
+          <input class="input" id="aiModel" placeholder="gemini-1.5-flash" />
+
+          <div class="row-wrap">
+            <button class="btn btn-success full" id="saveAiConfigBtn">Guardar IA</button>
+            <button class="btn btn-ghost full" id="testAiBtn">Probar IA</button>
+          </div>
+        </div>
+
+        <div class="side-box">
+          <div class="side-box-title">💾 Backups</div>
+          <button class="btn btn-ghost full" id="importBtn">Importar JSON</button>
+          <input type="file" id="importFile" accept="application/json" hidden />
+          <button class="btn btn-danger full" id="resetBtn">Reset total</button>
+        </div>
+      </aside>
+
+      <main class="main" id="main"></main>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="modal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div class="modal-title" id="modalTitle">Modal</div>
+        <button class="icon-btn" id="modalClose">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
